@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>Hello</p>
+    <form method="POST" action="{{ url_for('add_cupcake') }}">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        {{ form.flavor.label }}:
+        {{ form.flavor }}
+        <br>
+        {{ form.size.label }}:
+        {{ form.size }}
+        <br>
+        {{ form.rating.label }}:
+        {{ form.rating }}
+        <br>
+        {{ form.image.label }}:
+        {{ form.image }}
+        <br>
+        {{ form.submit }}
+    </form>
+{% endblock %}
